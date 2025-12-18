@@ -210,6 +210,7 @@ export const translate = {
     whores2: "We believe in empowering rural communities through fair trade, transparent transactions, and digital inclusion — helping small-scale farmers reach global markets effortlessly.",
     mission: "Our Mission & Vision",
     missionRes1: "We are committed to transforming the agricultural value chain through innovation, transparency, and sustainable partnerships.",
+    signin: "Sign in"
   },
   
   fr: {
@@ -423,7 +424,8 @@ export const translate = {
     whores1: "SmartSaha Marketplace est une plateforme numérique conçue pour réunir les agriculteurs, coopératives et entreprises du monde entier. Notre mission est de simplifier le commerce en connectant directement les producteurs aux clients, favorisant la croissance et l'innovation dans l'agriculture.",
     whores2: "Nous croyons en l'autonomisation des communautés rurales grâce au commerce équitable, à la transparence des transactions et à l'inclusion numérique — aidant les petits producteurs à atteindre les marchés mondiaux facilement.",
     mission: "Notre mission & vision",
-    missionRes1: "Nous nous engageons à transformer la chaîne de valeur agricole grâce à l'innovation, la transparence et des partenariats durables."
+    missionRes1: "Nous nous engageons à transformer la chaîne de valeur agricole grâce à l'innovation, la transparence et des partenariats durables.",
+    signin: "Se connecter"
 
   },
   mg: {
@@ -636,7 +638,8 @@ export const translate = {
     whores1: "SmartSaha Marketplace dia sehatra nomerika natao hampivondrona ny tantsaha, fikambanana ary orinasa maneran-tany. Ny tanjonay dia ny hanamora ny varotra amin'ny fampifandraisana mivantana ny mpamokatra amin'ny mpanjifa, manome hery ny fitomboana sy ny fanavaozana eo amin'ny fambolena.",
     whores2: "Mino izahay fa ny fanomezan-kery ny vondrom-piarahamonina ambanivohitra amin'ny alalan'ny varotra ara-drariny, fifanakalozana mangarahara, ary fampidirana nomerika — manampy ny tantsaha madinika hahatratra ny tsena maneran-tany mora foana.",
     mission: "Ny iraka & vina",
-    missionRes1: "Manolo-tena hanova ny rojo lanjan'ny fambolena izahay amin'ny alalan'ny fanavaozana, mangarahara, ary fiaraha-miasa maharitra."
+    missionRes1: "Manolo-tena hanova ny rojo lanjan'ny fambolena izahay amin'ny alalan'ny fanavaozana, mangarahara, ary fiaraha-miasa maharitra.",
+    signin: "Hiditra"
 
   }
   

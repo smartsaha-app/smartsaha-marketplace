@@ -7,7 +7,11 @@
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
       <NuxtLink to="/" class="flex items-center gap-3">
-        <img src="/marketplace_png.png" alt="Logo" class="h-10 w-auto rounded-md" />
+        <img
+          src="/marketplace_png.png"
+          alt="Logo"
+          class="h-10 w-auto rounded-md"
+        />
         <div class="leading-tight">
           <h1 class="text-xl font-semibold text-gray-800">AgriTrade</h1>
           <p class="text-xs text-gray-500 tracking-wide">
@@ -71,44 +75,51 @@
         </div>
 
         <div class="relative">
-          <div
-            class="flex items-center gap-2 p-2 pl-1 rounded-lg cursor-pointer"
-            @click="toggleDropdown"
-          >
+          <template v-if="isLoggedIn">
             <div
-              class="w-10 h-10 bg-[#10b481] text-white flex items-center justify-center font-semibold rounded-full"
+              class="flex items-center gap-2 p-2 pl-1 rounded-lg cursor-pointer"
+              @click="toggleDropdown"
             >
-              {{ user?.username?.charAt(0).toUpperCase() }}
+              <div
+                class="w-10 h-10 bg-[#10b481] text-white flex items-center justify-center font-semibold rounded-full"
+              >
+                {{ user?.username?.charAt(0).toUpperCase() }}
+              </div>
+
+              <div>
+                <p class="text-sm font-semibold text-gray-800">
+                  {{ user?.username }}
+                </p>
+                <p class="text-xs text-gray-500">{{ user?.email }}</p>
+              </div>
+
+              <i class="bx bx-chevron-down text-sm"></i>
             </div>
 
-            <div>
-              <p class="text-sm font-semibold text-gray-800">
-                {{ user?.username }}
-              </p>
-              <p class="text-xs text-gray-500">{{ user?.email }}</p>
-            </div>
+            <ul
+              v-if="dropdownOpen"
+              class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden"
+            >
+              <li class="px-4 py-2 text-sm hover:bg-gray-50">
+                <button @click="goToDashboard" class="w-full text-left">
+                  {{ t("dashboard") }}
+                </button>
+              </li>
 
-            <i class="bx bx-chevron-down text-sm"></i>
-          </div>
+              <li class="px-4 py-2 text-sm hover:bg-gray-50">
+                <button @click="logout">{{ t("logout") }}</button>
+              </li>
+            </ul>
+          </template>
 
-          <ul
-            v-if="dropdownOpen"
-            class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden"
-          >
-          <li class="px-4 py-2 text-sm hover:bg-gray-50">
-  <button
-    @click="goToDashboard"
-    class="w-full text-left"
-  >
-    {{ t("dashboard") }}
-  </button>
-</li>
-
-
-            <li class="px-4 py-2 text-sm hover:bg-gray-50">
-              <button @click="logout">{{ t('logout') }}</button>
-            </li>
-          </ul>
+          <template v-else>
+            <NuxtLink
+              to="/signin"
+              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded-lg hover:bg-[#0e946a] transition"
+            >
+              Sign in
+            </NuxtLink>
+          </template>
         </div>
       </div>
 
@@ -128,17 +139,27 @@
         class="md:hidden bg-white shadow-lg border-t border-gray-100 w-full"
       >
         <div class="flex items-center gap-3 p-4 border-b border-gray-100">
-          <div
-            class="w-12 h-12 bg-[#10b481] text-white flex items-center justify-center font-bold rounded-full"
-          >
-            {{ user?.username?.charAt(0).toUpperCase() }}
-          </div>
-          <div class="flex flex-col">
-            <p class="text-sm font-semibold text-gray-800">
-              {{ user?.username }}
-            </p>
-            <p class="text-xs text-gray-500">{{ user?.email }}</p>
-          </div>
+          <template v-if="isLoggedIn">
+            <div
+              class="w-12 h-12 bg-[#10b481] text-white flex items-center justify-center font-bold rounded-full"
+            >
+              {{ user?.username?.charAt(0).toUpperCase() }}
+            </div>
+            <div class="flex flex-col">
+              <p class="text-sm font-semibold text-gray-800">
+                {{ user?.username }}
+              </p>
+              <p class="text-xs text-gray-500">{{ user?.email }}</p>
+            </div>
+          </template>
+          <template v-else>
+            <NuxtLink
+              to="/signin"
+              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded-lg hover:bg-[#0e946a] transition"
+            >
+              Sign in
+            </NuxtLink>
+          </template>
         </div>
 
         <div class="flex items-center gap-2 py-3 px-4 border-b border-gray-100">
@@ -181,7 +202,12 @@
           </NuxtLink>
 
           <button
-            @click="() => { goToDashboard(); mobileMenuOpen = false }"
+            @click="
+              () => {
+                goToDashboard();
+                mobileMenuOpen = false;
+              }
+            "
             class="py-2 font-medium text-gray-700 hover:text-[#10b481] transition text-left"
           >
             Dashboard
@@ -316,7 +342,6 @@ function goToDashboard() {
     router.push("/dashboard");
   }
 }
-
 </script>
 
 <style scoped>
