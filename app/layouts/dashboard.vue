@@ -388,10 +388,6 @@ async function checkUser() {
 
 onMounted(() => {
   checkUser();
-
-  if (!isLoggedIn.value) {
-    router.push("/signin");
-  }
 });
 
 async function countUnreadMessages(currentUserId: number) {
