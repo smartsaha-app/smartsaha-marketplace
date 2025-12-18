@@ -112,14 +112,11 @@
               v-if="dropdownOpen"
               class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden"
             >
-            <li class="px-4 py-2 text-sm hover:bg-gray-50">
-              <button
-                @click="goToDashboard"
-                class="w-full text-left"
-              >
-                {{ t("dashboard") }}
-              </button>
-            </li>
+              <li class="px-4 py-2 text-sm hover:bg-gray-50">
+                <button @click="goToDashboard" class="w-full text-left">
+                  {{ t("dashboard") }}
+                </button>
+              </li>
               <li class="px-4 py-2 text-sm hover:bg-gray-50">
                 <button @click="logout">{{ t("logout") }}</button>
               </li>
@@ -209,7 +206,6 @@
       >
         <nav class="flex flex-col space-y-2 py-4">
           <template v-for="item in sidebarLinks" :key="item.label">
-            <!-- Dropdown pour admin -->
             <div v-if="item.dropdown" class="relative">
               <button
                 @click="
@@ -243,7 +239,7 @@
                   v-for="sub in item.dropdown"
                   :key="sub.label"
                   @click="router.push(sub.to)"
-                  class="flex items-center gap-2 px-4 py-2 text-white hover:bg-white/20 rounded w-full text-left text-sm"
+                  class="flex items-center gap-2 px-4 py-2 text-white hover:bg-white/20 rounded w-full text-left"
                 >
                   <i :class="sub.icon + ' text-lg'"></i>
                   <span
@@ -254,7 +250,6 @@
               </div>
             </div>
 
-            <!-- Liens simples -->
             <button
               v-else
               @click="router.push(item.to)"
@@ -323,7 +318,6 @@ const dropdownStates = reactive<{ [key: string]: boolean }>({});
 const sidebarLinks = computed(() => {
   if (!user.value) return [];
 
-  // Liens de base
   const baseLinks = [
     { label: t("dashboard"), icon: "bxr bx-dashboard", to: "/dashboard" },
     { label: t("posts"), icon: "bxr bx-newspaper", to: "/dashboard/post" },
@@ -338,18 +332,16 @@ const sidebarLinks = computed(() => {
 
   const links: any[] = [];
 
-  // Si admin : mettre les liens de base dans un dropdown
   if (user.value.id_categorie_user_id === 4) {
     links.push({
       label: t("gererCompte"),
       icon: "bx bx-user-circle",
       dropdown: baseLinks,
-      open: false, // pour gérer l'ouverture
+      open: false,
     });
 
     dropdownStates[t("gererCompte")] = false;
 
-    // Liens admin affichés directement
     links.push(
       { label: t("posts"), icon: "bxr bx-newspaper", to: "/admin/posts" },
       { label: t("category"), icon: "bx-category", to: "/admin/categories" },
@@ -357,7 +349,6 @@ const sidebarLinks = computed(() => {
       { label: t("user"), icon: "bxr bx-user", to: "/admin/users" }
     );
   } else {
-    // Utilisateur normal : juste les liens de base
     links.push(...baseLinks);
   }
 
@@ -400,7 +391,7 @@ onMounted(() => {
 
   if (!isLoggedIn.value) {
     router.push("/signin");
-  } 
+  }
 });
 
 async function countUnreadMessages(currentUserId: number) {
