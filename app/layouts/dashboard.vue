@@ -239,7 +239,7 @@
                   v-for="sub in item.dropdown"
                   :key="sub.label"
                   @click="router.push(sub.to)"
-                  class="flex items-center gap-2 px-4 py-2 text-white hover:bg-white/20 rounded w-full text-left text-sm"
+                  class="flex items-center gap-2 px-4 py-2 text-white hover:bg-white/20 rounded w-full text-left"
                 >
                   <i :class="sub.icon + ' text-lg'"></i>
                   <span
@@ -388,6 +388,10 @@ async function checkUser() {
 
 onMounted(() => {
   checkUser();
+
+  if (!isLoggedIn.value) {
+    router.push("/signin");
+  }
 });
 
 async function countUnreadMessages(currentUserId: number) {

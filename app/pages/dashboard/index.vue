@@ -57,21 +57,21 @@
         label="Received bids"
         :value="stats.receivedBids"
         icon="bx bx-down-arrow-circle"
-        color="#f59e0b"
+        color="#219ebc"
         bordered
       />
       <StatCard
         label="Sent bids"
         :value="stats.sentBids"
         icon="bx bx-up-arrow-circle"
-        color="#3b82f6"
+        color="#f4a261"
         bordered
       />
       <StatCard
         label="Accepted revenue"
         :value="formattedRevenue"
         icon="bx bx-money"
-        color="#22c55e"
+        color="#5fd4a2"
         bordered
       />
     </div>
@@ -255,8 +255,8 @@ function renderCharts() {
 
   const statusColors = {
     brouillon: "#6B7280", // gris
-    published: "#3B82F6", // bleu
-    négociation: "#F59E0B", // jaune
+    published: "#219ebc", // bleu
+    négociation: "#f4a261", // jaune
     vendu: "#10B481", // vert
     supprimé: "#EF4444", // rouge
   };
