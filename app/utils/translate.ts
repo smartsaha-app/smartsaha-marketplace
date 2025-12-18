@@ -210,7 +210,15 @@ export const translate = {
     whores2: "We believe in empowering rural communities through fair trade, transparent transactions, and digital inclusion — helping small-scale farmers reach global markets effortlessly.",
     mission: "Our Mission & Vision",
     missionRes1: "We are committed to transforming the agricultural value chain through innovation, transparency, and sustainable partnerships.",
-    signin: "Sign in"
+    signin: "Sign in",
+    featuresTitle1: "Instant access to your workspace",
+    featuresText1: "Manage your listings, bids, and messages all in one place with our user-friendly dashboard.",
+    featuresTitle2: "Flexible buying & selling",
+    featuresText2: "Whether you're looking to buy or sell, our platform offers flexible options to suit your needs.",
+    featuresTitle3: "Smart negotiation system",
+    featuresText3: "Engage in secure and transparent negotiations with buyers and sellers directly through our platform.",
+    featuresTitle4: "Built on trust & reviews",
+    featuresText4: "Our review system ensures that you can trade with confidence, knowing the reputation of your trading partners.",
   },
   
   fr: {

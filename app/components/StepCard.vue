@@ -48,39 +48,35 @@ const t = (key: string) => {
 const features = [
   {
     key: "access",
-    title: "Instant access to your workspace",
-    description:
-      "Un tableau de bord centralisé pour gérer annonces, transactions et messages en toute simplicité.",
+    title: t('featuresTitle1'),
+    description: t('featuresText1'),
     icon: "bx bx-grid-alt",
     tag: "Dashboard",
-    color: "bg-emerald-500",
+    color: "bg-[#10b481]",
   },
   {
     key: "listing",
-    title: "Flexible buying & selling",
-    description:
-      "Publiez des offres d’achat ou de vente en quelques clics avec un contrôle total.",
+    title: t('featuresTitle2'),
+    description: t('featuresText2'),
     icon: "bx bx-store",
     tag: "Marketplace",
-    color: "bg-blue-500",
+    color: "bg-[#219ebc]",
   },
   {
     key: "negotiation",
-    title: "Smart negotiation system",
-    description:
-      "Discutez, négociez et concluez des deals en toute transparence.",
+    title: t('featuresTitle3'),
+    description: t('featuresText3'),
     icon: "bx bx-conversation",
     tag: "Bidding",
-    color: "bg-purple-500",
+    color: "bg-[#f4a261]",
   },
   {
     key: "trust",
-    title: "Built on trust & reviews",
-    description:
-      "Un système d’évaluation clair pour renforcer la crédibilité de chaque utilisateur.",
+    title: t('featuresTitle4'),
+    description: t('featuresText4'),
     icon: "bx bx-shield-quarter",
     tag: "Reputation",
-    color: "bg-rose-500",
+    color: "bg-[##5fd4a2]",
   },
 ];
 </script>
