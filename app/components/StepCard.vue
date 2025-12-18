@@ -76,7 +76,7 @@ const features = [
     description: t('featuresText4'),
     icon: "bx bx-shield-quarter",
     tag: "Reputation",
-    color: "bg-[##5fd4a2]",
+    color: "bg-[#5fd4a2]",
   },
 ];
 </script>
