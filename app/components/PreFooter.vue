@@ -4,7 +4,7 @@
     <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
       
       <div>
-        <span class="inline-block mb-4 uppercase text-[#10b481] text-sm font-semibold">
+        <span class="inline-block mb-4 uppercase text-[#10b481] text-sm font-medium">
          {{ t('ready') }}
         </span>
 

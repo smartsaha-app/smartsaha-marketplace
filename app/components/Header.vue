@@ -48,7 +48,7 @@
           <transition name="fade">
             <ul
               v-if="open"
-              class="absolute mt-2 w-40 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden"
+              class="absolute mt-2 w-40 bg-white border border-gray-100 rounded shadow-md overflow-hidden"
             >
               <li
                 v-for="loc in locales"
@@ -64,7 +64,7 @@
         </div>
 
         <div
-          class="relative p-2 rounded-lg hover:bg-gray-100 cursor-pointer transition hidden"
+          class="relative p-2 rounded hover:bg-gray-100 cursor-pointer transition hidden"
           @click="$router.push('/messages')"
         >
           <i class="bx bx-message-dots text-2xl text-gray-700"></i>
@@ -77,7 +77,7 @@
         <div class="relative">
           <template v-if="isLoggedIn">
             <div
-              class="flex items-center gap-2 p-2 pl-1 rounded-lg cursor-pointer"
+              class="flex items-center gap-2 p-2 pl-1 rounded cursor-pointer"
               @click="toggleDropdown"
             >
               <div
@@ -98,7 +98,7 @@
 
             <ul
               v-if="dropdownOpen"
-              class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden"
+              class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded shadow-md overflow-hidden"
             >
               <li class="px-4 py-2 text-sm hover:bg-gray-50">
                 <button @click="goToDashboard" class="w-full text-left">
@@ -115,9 +115,9 @@
           <template v-else>
             <NuxtLink
               to="/signin"
-              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded-lg hover:bg-[#0e946a] transition"
+              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded hover:bg-[#0e946a] transition"
             >
-              Sign in
+              {{ t('signin') }}
             </NuxtLink>
           </template>
         </div>
@@ -155,9 +155,9 @@
           <template v-else>
             <NuxtLink
               to="/signin"
-              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded-lg hover:bg-[#0e946a] transition"
+              class="px-4 py-2 text-sm font-medium text-white bg-[#10b481] rounded hover:bg-[#0e946a] transition"
             >
-              Sign in
+              {{}}
             </NuxtLink>
           </template>
         </div>
@@ -165,7 +165,7 @@
         <div class="flex items-center gap-2 py-3 px-4 border-b border-gray-100">
           <button
             @click="open = !open"
-            class="flex items-center gap-2 py-1.5 px-3 w-full border rounded-lg hover:bg-gray-50 transition"
+            class="flex items-center gap-2 py-1.5 px-3 w-full border rounded hover:bg-gray-50 transition"
           >
             <img :src="currentLocale.flag" class="w-5 h-5 rounded-full" />
             <span class="text-sm font-medium">{{ currentLocale.name }}</span>
@@ -175,7 +175,7 @@
           <transition name="fade">
             <ul
               v-if="open"
-              class="absolute mt-2 w-40 bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden z-50"
+              class="absolute mt-2 w-40 bg-white border border-gray-100 rounded shadow-md overflow-hidden z-50"
             >
               <li
                 v-for="loc in locales"
