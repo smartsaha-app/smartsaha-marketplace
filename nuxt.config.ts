@@ -6,5 +6,24 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
-  ]
+    '@nuxtjs/sitemap',
+  ],
+
+  site: {
+    url: 'https://sales.smart-saha.com',
+    name: 'SmartSaha Marketplace'
+  },
+
+  sitemap: {
+    gzip: true,
+
+    exclude: [
+      '/signin',
+      '/signup',
+      '/market/**',
+      '/market/about',
+      '/dashboard/**',
+      '/admin/**'
+    ]
+  }
 })
