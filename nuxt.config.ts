@@ -20,8 +20,6 @@ export default defineNuxtConfig({
     exclude: [
       '/signin',
       '/signup',
-      '/market/**',
-      '/market/about',
       '/dashboard/**',
       '/admin/**'
     ]
